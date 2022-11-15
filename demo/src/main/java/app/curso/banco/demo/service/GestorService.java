@@ -41,6 +41,14 @@ public class GestorService {
 		}
 	}
 	
+	public Optional<Gestor> obtenerConCorreo(String correo){
+		return this.gestorRespository.findByCorreo(correo);
+	}
+	
+	public Optional<Gestor> obtenerPorLogin(String correo, String password){
+		return this.gestorRespository.findByCorreoAndPassword(correo, password);
+	}
+	
 	
 	
  }
