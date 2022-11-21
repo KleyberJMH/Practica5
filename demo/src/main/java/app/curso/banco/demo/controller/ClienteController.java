@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import app.curso.banco.demo.model.Cliente;
+import app.curso.banco.demo.model.Gestor;
 import app.curso.banco.demo.service.ClienteService;
 
 @RestController
@@ -42,6 +44,11 @@ public class ClienteController {
 	@DeleteMapping(path="/{id}")
 	public boolean borrarCliente(@PathVariable("id") Long id) {
 		return this.clienteService.borrarCliente(id);
+	}
+	
+	@GetMapping(path="/gestor/{idGestor}")
+	public ArrayList<Cliente> obtenerPorIdGestor(@PathVariable("idGestor") Long id){
+		return this.clienteService.obtenerPorIdGestor(id);
 	}
 	
 	

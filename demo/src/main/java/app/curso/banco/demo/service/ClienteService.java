@@ -13,34 +13,38 @@ import app.curso.banco.demo.repository.ClienteRepository;
 public class ClienteService {
 	//Vincular GestorRepository
 	@Autowired
-	ClienteRepository clienteRespository;
+	ClienteRepository clienteRepository;
 	
 	//Buscar todos los clientes
 	public ArrayList<Cliente> obtenerClientes(){
 		
-		return (ArrayList<Cliente>)this.clienteRespository.findAll();
+		return (ArrayList<Cliente>)this.clienteRepository.findAll();
 	}
 	
 	//Buscar un cliente por id
 	public Optional<Cliente>  obtenerCliente(Long id) {
-		return this.clienteRespository.findById(id);
+		return this.clienteRepository.findById(id);
 	}
 	
 	//Crea o actualiza un cliente y lo devuelve con id
 	public Cliente guardarCliente(Cliente cliente) {
-		return this.clienteRespository.save(cliente);
+		return this.clienteRepository.save(cliente);
 	}
 	
 	//Eliminar cliente
 	public boolean borrarCliente(Long id) {
 		try {
-			this.clienteRespository.deleteById(id);
+			this.clienteRepository.deleteById(id);
 			return true;
 		}catch (Exception e) {
 			return false;
 		}
 	}
 	
+	//Buscar por id gestor
+	public ArrayList<Cliente> obtenerPorIdGestor(Long id) {
+		return this.clienteRepository.findByGestorId(id);
+	}
 	
 	
  }
