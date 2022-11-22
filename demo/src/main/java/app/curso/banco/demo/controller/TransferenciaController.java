@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import app.curso.banco.demo.model.Transferencia;
 import app.curso.banco.demo.service.TransferenciaService;
 
@@ -44,6 +45,10 @@ public class TransferenciaController {
 		return this.transferenciaService.borrarTransferencia(id);
 	}
 	
+	@GetMapping(path="/ordenante/{idOrdenante}")
+	public ArrayList<Transferencia> obtenerPorOrdenanteId(@PathVariable("idOrdenante") Long id){
+		return this.transferenciaService.obtenerPorOrdenanteId(id);
+	};
 	
 
 	

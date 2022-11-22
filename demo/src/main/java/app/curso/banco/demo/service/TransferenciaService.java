@@ -41,6 +41,11 @@ public class TransferenciaService {
 		}
 	}
 	
+	//Buscar por ordenante
+	public ArrayList<Transferencia> obtenerPorOrdenanteId(Long id){
+		return this.transferenciaRespository.findByOrdenanteIdOrBeneficiarioId(id, id);
+	}
+	
 	
 	
  }

@@ -44,6 +44,11 @@ public class MensajeController {
 		return this.mensajeService.borrarMensaje(id);
 	}
 	
+	@GetMapping(path="/origen/{idGestor}")
+	public ArrayList<Mensaje> obtenerPorOrigen(@PathVariable("idGestor") Long id){
+		return this.mensajeService.obtenerPorOrigen(id);
+	};
+	
 	
 
 	
