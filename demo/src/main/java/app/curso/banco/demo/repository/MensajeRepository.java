@@ -9,5 +9,5 @@ import app.curso.banco.demo.model.Mensaje;
 
 @Repository
 public interface MensajeRepository extends CrudRepository<Mensaje, Long>{
-	public ArrayList<Mensaje> findByOrigenId(Long id);
+	public ArrayList<Mensaje> findByOrigenIdOrDestinoId(Long id, Long idDestino);
 }

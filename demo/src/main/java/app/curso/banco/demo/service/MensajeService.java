@@ -41,9 +41,8 @@ public class MensajeService {
 		}
 	}
 	
-	//Buscar por idOrigen
 	public ArrayList<Mensaje> obtenerPorOrigen(Long id){
-		return this.mensajeRespository.findByOrigenId(id);
+		return this.mensajeRespository.findByOrigenIdOrDestinoId(id, id);
 	}
 	
 	
